@@ -1,10 +1,13 @@
 import React from 'react'
 import {Container, Nav, Col, Tab, Row} from 'react-bootstrap'
 import Sidebar from './Sidebar'
-import Tabscontent from './Tabscontent'
+import Pages from './Pages'
+import TopMenu from './TopMenu'
 
-function Mainbody() {
+function Layout() {
   return (
+    <>
+    <TopMenu />
     <Container id='MainbodyContainer' fluid>
         <Tab.Container id="left-tabs" defaultActiveKey="aboutsite">
             <Row>
@@ -12,12 +15,13 @@ function Mainbody() {
                     <Sidebar />
                 </Col>
                 <Col sm='9' lg='10' xs='12'>
-                    <Tabscontent />
+                    <Pages />
                 </Col>
             </Row>
         </Tab.Container>
     </Container>
+    </>
   )
 }
 
-export default Mainbody
+export default Layout

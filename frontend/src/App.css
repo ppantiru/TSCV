@@ -43,14 +43,21 @@ body {
   background-color: #00AEEF;
   padding: 0 !important;
 }
+
+/* Sidebar */
 .sidebar-inner {
   position: fixed;
 }
-.sidebar-inner a{
-  color: #fff;
-}
-/* Sidebar */
 
+.sidebar-inner ul {
+  margin: 0;
+  padding: 0;
+}
+.sidebar-inner li {
+  color: #fff;
+  list-style-type: none;
+  padding: 10px 0;
+}
 /* App 
 
 
