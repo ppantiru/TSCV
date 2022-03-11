@@ -35,10 +35,7 @@ body {
   height: 25px;
 }
 
-/* Mainbody */
-#Mainbody {
-  min-height: calc(100vh - 50px);
-}
+/* Layout */
 .sidebar {
   background-color: #00AEEF;
   padding: 0 !important;
@@ -58,73 +55,8 @@ body {
   list-style-type: none;
   padding: 10px 0;
 }
-/* App 
 
-
-#TopMen .App-logo {
-  height: 4vmin;
-  pointer-events: none;
-  top: 0;
-  position: relative;
-  background-color: blue;
+/* Pages */
+#Mainbody {
+  min-height: calc(100vh - 50px);
 }
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-
-
-.App {
-  background-color: #fff;
-  min-height: 100%;
-}
-.AppBody {
-  max-width: 99%;
-}
-
-
-.App-header, .App-header .navbar {
-  height: 50px;
-  font-size: 16px;
-  background-color: #fff;
-}
-.App-header .navbar{
-  border-bottom: 1px solid #61dafb;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-
-.CountryFlag {
-  height: 20px;
-  padding-right: 8px;
-}
-
-.sidebar {
-  padding-top: 16px;
-  background-color: #00aeef;
-}
-.nav-link {
-  color: #fff  !important;
-}
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #00aeef !important;
-  background-color: #fff !important;
-  border-radius: 0 50px 50px 0;
-}
-
-
-*/
