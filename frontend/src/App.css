@@ -1,0 +1,123 @@
+/* App */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: lightgray;
+}
+
+/* TopMenu */
+#TopMenuContainer
+{
+  height: 50px;
+}
+
+#TopMenu {
+  border-bottom: 1px solid #00AEEF;
+  height: 50px;
+  background-color: #fff;
+}
+
+#TopMenu .CountryFlag {
+  height: 20px;
+  padding-right: 8px;
+}
+
+#TopMenu #rightSide button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+#TopMenu .App-logo{
+  height: 25px;
+}
+
+/* Mainbody */
+#Mainbody {
+  min-height: calc(100vh - 50px);
+}
+.sidebar {
+  background-color: #00AEEF;
+  padding: 0 !important;
+}
+.sidebar-inner {
+  position: fixed;
+}
+.sidebar-inner a{
+  color: #fff;
+}
+/* Sidebar */
+
+/* App 
+
+
+#TopMen .App-logo {
+  height: 4vmin;
+  pointer-events: none;
+  top: 0;
+  position: relative;
+  background-color: blue;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+.App {
+  background-color: #fff;
+  min-height: 100%;
+}
+.AppBody {
+  max-width: 99%;
+}
+
+
+.App-header, .App-header .navbar {
+  height: 50px;
+  font-size: 16px;
+  background-color: #fff;
+}
+.App-header .navbar{
+  border-bottom: 1px solid #61dafb;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.CountryFlag {
+  height: 20px;
+  padding-right: 8px;
+}
+
+.sidebar {
+  padding-top: 16px;
+  background-color: #00aeef;
+}
+.nav-link {
+  color: #fff  !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #00aeef !important;
+  background-color: #fff !important;
+  border-radius: 0 50px 50px 0;
+}
+
+
+*/
