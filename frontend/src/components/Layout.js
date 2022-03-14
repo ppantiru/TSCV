@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Nav, Col, Tab, Row} from 'react-bootstrap'
+import {Container, Col, Tab, Row} from 'react-bootstrap'
 import Sidebar from './Sidebar'
 import Pages from './Pages'
 import TopMenu from './TopMenu'

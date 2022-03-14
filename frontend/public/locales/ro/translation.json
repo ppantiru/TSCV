@@ -1,10 +1,10 @@
 {
     "Login": "Autentificare",
     "Register": "Inregistrare",
-    "About site": "Despre site/app",
+    "About site": "Despre site",
     "About me": "Despre mine",
-    "My philosophies": "Filosofii personale",
+    "My philosophies": "Filosofii",
     "skills": "Ce știu / CV",
-    "non-skills": "Ce probabil nu stiu",
-    "evaluations": "Ultimele evaluari"
+    "non-skills": "Ce nu stiu",
+    "evaluations": "Evaluari"
 }
