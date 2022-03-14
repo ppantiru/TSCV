@@ -6,6 +6,8 @@ function Pages(){
     return (
         <div id='Mainbody'>
             Test content
+            <br/>
+            {t}
         </div>
     );
 }

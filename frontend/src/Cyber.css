@@ -10,14 +10,14 @@
 
 .btn {
   width: 100%;
-  height: 60px; 
+  height: 70px; 
   border: 0;
   outline: none;
   background-color: var(--white-color) !important;
   cursor: pointer;
   position: relative;
   font-family: Tomorrow, sans-serif;
-  font-size: .85rem !important;
+  font-size: 1rem !important;
   font-weight:700 !important;
   text-transform: uppercase;
   color: var(--white-color);
