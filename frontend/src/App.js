@@ -3,6 +3,7 @@ import {Container, Col, Tab, Row} from 'react-bootstrap'
 import Sidebar from './components/Sidebar'
 import Pages from './components/Pages'
 import TopMenu from './components/TopMenu'
+import MobleMenu from './components/MobileMenu';
 
 function App() {
   return (
@@ -11,10 +12,13 @@ function App() {
       <Container id='MainbodyContainer' fluid>
           <Tab.Container id="left-tabs" defaultActiveKey="aboutsite">
               <Row>
-                  <Col sm='3' lg='2' className="d-none d-md-block sidebar" >
+                  <Col lg='2' className="d-none d-lg-block sidebar" >
                       <Sidebar />
                   </Col>
-                  <Col sm='9' lg='10' xs='12'>
+                  <Col xs='12' className='d-lg-none mobile-outer'>
+                    <MobleMenu  />
+                  </Col>
+                  <Col lg='10' xs='12' className='MainBody-outer'>
                       <Pages />
                   </Col>
               </Row>

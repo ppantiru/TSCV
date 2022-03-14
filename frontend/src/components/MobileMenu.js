@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 
 
 
-function Sidebar() {
+function MobleMenu() {
     const { t } = useTranslation();
     const buttons = ['About site', 'About me', 'skills', 'non-skills', 'My philosophies', 'evaluations','fun'];
   return (
-    <Col className='sidebar-inner' xs='12' sm='12' lg='2'>
+    <Col className='mobile-inner' xs='12'>
         {buttons.map((translationKey) => 
             <button key={translationKey} className='cybr-btn'>
                 {t(translationKey)}<span aria-hidden>_</span>
@@ -21,4 +21,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default MobleMenu
