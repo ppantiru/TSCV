@@ -23,7 +23,7 @@ function TopMenu(){
                         <button onClick={() => handleClick('en') }><img src={gbFlag} className="CountryFlag" alt="logo" /></button>
                         <button onClick={() => handleClick('ro') }><img src={roFlag} className="CountryFlag" alt="logo" /></button>
                         <span className='loginbuttons'>
-                            <a href='htpp://google.com'>{t('Login')}</a> | <a href='htpp://google.com'>{t('Register')}</a>
+                            <a href='htpp://google.com'>{t('login')}</a> | <a href='htpp://google.com'>{t('register')}</a>
                         </span>
                     </div>
                 </Navbar.Text>

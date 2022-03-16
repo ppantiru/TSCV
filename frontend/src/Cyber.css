@@ -10,7 +10,7 @@
 }
 
 
-body .cybr-btn + .cybr-btn {
+body .cybr-btn + .cybr-btn, .cybr-btn {
   margin-top: 2rem;
 }
 
@@ -183,7 +183,7 @@ body .cybr-btn + .cybr-btn {
   }
 }
 
-.cybr-btn:nth-of-type(3) {
+.cybr-btn.active {
   --primary-hue: 0;
 }
   /* end Cyber buttons main */
