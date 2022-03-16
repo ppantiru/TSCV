@@ -1,10 +1,10 @@
 {
     "login": "Login",
     "register": "Register",
-    "about-site": "About website",
+    "home": "Home",
     "about-me": "About me",
-    "philosophies": "Philosophies",
     "skills": "I know / CV",
+    "portfolio": "Portfolio",
     "non-skills": "I don't know",
     "evaluations": "Evaluations",
     "fun": "For fun"
