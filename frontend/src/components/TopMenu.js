@@ -1,8 +1,9 @@
-import logo from '../logo.svg';
+import logo from '../logoTS-192.png';
 import roFlag from '../ro.svg';
 import gbFlag from '../gb.svg';
 import { Navbar } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom'
 
 function TopMenu(){
     const { t, i18n } = useTranslation();
@@ -15,7 +16,7 @@ function TopMenu(){
     return (
         <div id='TopMenuContainer'>
             <Navbar id='TopMenu' fixed='top'>
-                <Navbar.Brand href="#">{logo}</Navbar.Brand>
+                <Navbar.Brand href="/">{logo}</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>
@@ -23,7 +24,7 @@ function TopMenu(){
                         <button onClick={() => handleClick('en') }><img src={gbFlag} className="CountryFlag" alt="logo" /></button>
                         <button onClick={() => handleClick('ro') }><img src={roFlag} className="CountryFlag" alt="logo" /></button>
                         <span className='loginbuttons'>
-                            <a href='htpp://google.com'>{t('login')}</a> | <a href='htpp://google.com'>{t('register')}</a>
+                            <Link to={'/login'}>{t('login')}</Link> | <Link to={'/register'}>{t('register')}</Link>
                         </span>
                     </div>
                 </Navbar.Text>
