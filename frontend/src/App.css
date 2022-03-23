@@ -71,3 +71,9 @@ body {
     /* display: none; */
   }
  }
+
+ .scrollable {
+  height: calc(100vh - 50px);
+  padding: 0 10px 20px 10px;
+  overflow: auto;
+}
