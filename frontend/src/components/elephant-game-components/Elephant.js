@@ -1,19 +1,50 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
+import useKeyPress from './KeysHandler'
 
-function Elephant({playerPosX, playerPosY}) {
+function Elephant({playerPosX, playerPosY, setPlayerPosY, groundLevel, GRAVITY}) {
 
-    const playerWidth = 60
-    const playerHeight = 50
-    
+  const playerWidth = 60
+  const playerHeight = 50
+  const jumpHight = 120
+  const jumpSpeed = 20
+
+  const [ falling, setFalling ] = useState(true)
+  const upPressed = useKeyPress('ArrowUp')
+
+  // Jump lil elephan, jump
+  useEffect(() => {
+    let gameTimerId
+    if(upPressed && (playerPosY < jumpHight)){
+        gameTimerId = setInterval(() => {
+          setPlayerPosY(playerPosY => playerPosY + jumpSpeed)
+        }, 30)
+    }else{
+      clearInterval(gameTimerId)
+      setFalling(true)
+    }
+
+    if(playerPosY > groundLevel && falling) {
+      clearInterval(gameTimerId)
+      gameTimerId = setInterval(() => {
+        setPlayerPosY(playerPosY => playerPosY - GRAVITY)
+      }, 30)
+    }else if(playerPosY === groundLevel){
+      setFalling(false)
+    }
+
+    return () => {
+      clearInterval(gameTimerId)
+    }
+  }, [GRAVITY, groundLevel, falling, upPressed, playerPosY, setPlayerPosY])
 
   return (
     <div style={{
-        position: 'relative',
+        position: 'absolute',
         backgroundColor: 'blue',
         width: playerWidth,
         height: playerHeight,
-        top: playerPosY,
         left: playerPosX,
+        bottom: playerPosY,
     }}></div>
   )
 }
