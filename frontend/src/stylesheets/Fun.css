@@ -97,3 +97,13 @@ content: '';
 left: 25px;
 top: -10px;
 }
+.palyerAsset {
+  vertical-align: middle;
+  height: 150%;
+  right: 10px;
+  position: relative;
+  bottom: 20px;
+}
+/* .collisionBox{
+  border: 2px dotted #000;
+} */
