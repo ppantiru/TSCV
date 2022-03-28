@@ -104,6 +104,6 @@ top: -10px;
   position: relative;
   bottom: 20px;
 }
-/* .collisionBox{
+.collisionBox{
   border: 2px dotted #000;
-} */
+}

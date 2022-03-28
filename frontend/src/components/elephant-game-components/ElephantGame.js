@@ -1,7 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Elephant from './Elephant'
 import Obstacles from './Obstacles'
 import Landscape from './Landscape'
+import useKeyPress from './KeysHandler'
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function ElephantGame() {
 
@@ -10,25 +17,48 @@ function ElephantGame() {
   const obstaclePosY = groundLevel
   const GRAVITY = 10
   
+  const [ gameRun , setGameRun ] =  useState(true)
   const [ playerPosY, setPlayerPosY ] = useState(groundLevel)
-  const [ obstaclePosX, setObstaclePosX ] = useState(500)
+  const [ obstaclePosX, setObstaclePosX ] = useState(900)
+  const [ obtacleWidth, setObtacleWidth ] = useState(20)
+  const [ obstacleHeight, setObstacleHeight ] = useState(20)
+  const [ posOffset, setPosOffset ] = useState(100)
+
+  const enterPressed = useKeyPress('Enter')
+
+  useEffect(() => {
+    if(playerPosX + 60 > obstaclePosX &&
+    playerPosX < obstaclePosX + obtacleWidth &&
+    playerPosY - 50 < obstacleHeight){
+      setGameRun(false)
+    }
+    if(enterPressed){
+      setGameRun(true)
+    }
+  },[obstaclePosX, obstaclePosY,enterPressed])
 
   return (
     <div className='gamewindow'>
       <Landscape/>
-      <Elephant
+      {gameRun ? <Elephant
+        gameRun={gameRun}
+        setGameRun={setGameRun}
         GRAVITY={GRAVITY}
         groundLevel={groundLevel}
         playerPosX={playerPosX}
         playerPosY={playerPosY}
         setPlayerPosY={setPlayerPosY}
-      />
-      <Obstacles 
+      /> : null }
+      {gameRun ? <Obstacles
+        obtacleWidth={obtacleWidth}
+        obstacleHeight={obstacleHeight}
         obstaclePosX={obstaclePosX}
         obstaclePosY={obstaclePosY}
+        posOffset={posOffset}
+        setPosOffset={setPosOffset}
         setObstaclePosX={setObstaclePosX}
-      />
-      <p style={{position:'absolute'}}>Player altitude: {playerPosY}</p>
+      /> : null }
+      <p style={{position:'absolute'}}>Player altitude: {playerPosY}, {obstaclePosX }</p>
     </div>
   )
 }
