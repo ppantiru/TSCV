@@ -4,12 +4,6 @@ import Obstacles from './Obstacles'
 import Landscape from './Landscape'
 import useKeyPress from './KeysHandler'
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 function ElephantGame() {
 
   const groundLevel = 30
@@ -28,14 +22,14 @@ function ElephantGame() {
 
   useEffect(() => {
     if(playerPosX + 60 > obstaclePosX &&
-    playerPosX < obstaclePosX + obtacleWidth &&
-    playerPosY - 50 < obstacleHeight){
-      setGameRun(false)
+      playerPosX < obstaclePosX + obtacleWidth &&
+      playerPosY - 50 < obstacleHeight){
+        setGameRun(false)
     }
     if(enterPressed){
       setGameRun(true)
     }
-  },[obstaclePosX, obstaclePosY,enterPressed])
+  },[obstaclePosX, obstaclePosY, enterPressed, obtacleWidth, obstacleHeight, playerPosY])
 
   return (
     <div className='gamewindow'>
@@ -57,6 +51,8 @@ function ElephantGame() {
         posOffset={posOffset}
         setPosOffset={setPosOffset}
         setObstaclePosX={setObstaclePosX}
+        setObtacleWidth={setObtacleWidth}
+        setObstacleHeight={setObstacleHeight}
       /> : null }
       <p style={{position:'absolute'}}>Player altitude: {playerPosY}, {obstaclePosX }</p>
     </div>
