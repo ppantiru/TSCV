@@ -28,7 +28,7 @@ function Sidebar(props) {
 			{buttons.map((translationKey) =>
 				<button key={translationKey} 
 				className={
-					`cybr-btn ${`/${translationKey}` === location.pathname ? 'active' : ''}
+					`${translationKey} cybr-btn ${`/${translationKey}` === location.pathname ? 'active' : ''}
 					${translationKey === 'home' && location.pathname === '/' ? 'active' : '' }
 					`
 				}
