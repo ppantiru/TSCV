@@ -2,44 +2,50 @@ import { useEffect } from 'react'
 import rock1 from './rock1.png'
 import rock2 from './rock2.png'
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
-function Obstacles({obtacleWidth, obstacleHeight, obstaclePosX, posOffset, setPosOffset, setObstaclePosX, obstaclePosY}) {
+function Obstacles({obtacleWidth, obstacleHeight, obstaclePosX, setObstaclePosX, obstaclePosY, getRandomInt, offset, setOffset}) {
 
 const obstacleSpeed = 5
+const initialPos = 900
+
 
 useEffect(() => {
   let obstTimerId
-  let offset = getRandomInt(100,500)
-  if(obstaclePosX > -offset * 1.5){
+  if(obstaclePosX > -offset){
     obstTimerId = setInterval(() => {
         setObstaclePosX(obstaclePosX => (obstaclePosX - obstacleSpeed))
-    },20)
+    },10)
   }else{
-    setObstaclePosX(900)
-    setPosOffset(offset)
+    setObstaclePosX(initialPos)
+    setOffset(getRandomInt(20, 700))
   }
 
 
   return () => {
     clearInterval(obstTimerId)
   }
-},[obstaclePosX, setObstaclePosX, posOffset])
+},[obstaclePosX, setObstaclePosX, getRandomInt, offset, setOffset])
 
 
   return (
-    <div style={{
+    <>
+      <div style={{
+          position: 'absolute',
+          backgroundColor: '',
+          width: obtacleWidth,
+          height: obstacleHeight,
+          left: obstaclePosX,
+          bottom: obstaclePosY,
+      }}><img src={rock1} alt='rock' width={obtacleWidth} height={obstacleHeight}/></div>
+      <div style={{
         position: 'absolute',
-        backgroundColor: 'red',
+        backgroundColor: '',
         width: obtacleWidth,
         height: obstacleHeight,
-        left: obstaclePosX,
+        left: obstaclePosX + offset,
         bottom: obstaclePosY,
-    }}></div>
+      }}><img src={rock2} alt='rock' width={obtacleWidth} height={obstacleHeight}/></div>
+    </>
   )
 }
 
