@@ -1,11 +1,14 @@
 {
     "login": "Autentificare",
-    "register": "Inregistrare",
-    "home": "Acasa",
+    "register": "Înregistrare",
+    "home": "Acasă",
     "about-me": "Despre mine",
     "skills": "Ce știu / CV",
     "portfolio": "Portofoliu",
-    "non-skills": "Ce nu stiu",
-    "evaluations": "Evaluari",
-    "fun": "Joculeț"
+    "non-skills": "Ce nu știu",
+    "evaluations": "Evaluări",
+    "fun": "Joculeț",
+    "score": "Scorul tău este",
+    "press-enter": "Apasă ↵ pentru a începe",
+    "press-up": "Folosește ↑ pentru a sări"
 }

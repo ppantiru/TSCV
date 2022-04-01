@@ -3,6 +3,7 @@ import Elephant from './Elephant'
 import Obstacles from './Obstacles'
 import Landscape from './Landscape'
 import useKeyPress from './KeysHandler'
+import { useTranslation } from "react-i18next"
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -12,6 +13,7 @@ function getRandomInt(min, max) {
 
 function ElephantGame() {
 
+  const { t } = useTranslation();
   const groundLevel = 30
   const playerWidth = 60
   const playerHeight = 50
@@ -95,9 +97,9 @@ function ElephantGame() {
        : 
         <div className='score'>
           <div className='score-inner'>
-            <p>Your score is: {score}</p>
-            <p>Pres ↵ Enter to start</p>
-            <p>Use ↑ to jump</p>
+            <p>{t('score')}: {score}</p>
+            <p>{t('press-enter')}</p>
+            <p>{t('press-up')}</p>
           </div>
         </div>
        }
