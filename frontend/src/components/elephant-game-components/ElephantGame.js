@@ -96,7 +96,7 @@ function ElephantGame() {
         <div className='score'>
           <div className='score-inner'>
             <p>Your score is: {score}</p>
-            <p>Pres ↵ Enter to restart</p>
+            <p>Pres ↵ Enter to start</p>
             <p>Use ↑ to jump</p>
           </div>
         </div>
