@@ -17,7 +17,7 @@ useEffect(() => {
     },10)
   }else{
     setObstaclePosX(initialPos)
-    setOffset(getRandomInt(20, 700))
+    setOffset(getRandomInt(0,1) ? getRandomInt(20, 70): getRandomInt(200,700))
   }
 
 
@@ -36,6 +36,7 @@ useEffect(() => {
           height: obstacleHeight,
           left: obstaclePosX,
           bottom: obstaclePosY,
+          zIndex: 5
       }}><img src={rock1} alt='rock' width={obtacleWidth} height={obstacleHeight}/></div>
       <div style={{
         position: 'absolute',
@@ -44,6 +45,7 @@ useEffect(() => {
         height: obstacleHeight,
         left: obstaclePosX + offset,
         bottom: obstaclePosY,
+        zIndex: 5
       }}><img src={rock2} alt='rock' width={obtacleWidth} height={obstacleHeight}/></div>
     </>
   )

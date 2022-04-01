@@ -13,38 +13,57 @@ function getRandomInt(min, max) {
 function ElephantGame() {
 
   const groundLevel = 30
+  const playerWidth = 60
+  const playerHeight = 50
   const playerPosX = 100
   const obstaclePosY = groundLevel
-  const GRAVITY = 10
   const obtacleWidth = 20
   const obstacleHeight =  20
-  const [ gameRun , setGameRun ] =  useState(true)
+  const [ gameRun , setGameRun ] =  useState(false)
   const [ playerPosY, setPlayerPosY ] = useState(groundLevel)
   const [ obstaclePosX, setObstaclePosX ] = useState(900)
-  const [ offset, setOffset ] = useState(100)
+  const [ offset, setOffset ] = useState(30)
+  const [ score, setScore ] = useState(0)
 
+  function reset(){
+    setPlayerPosY(groundLevel)
+    setObstaclePosX(900)
+    setScore(0)
+  }
 
   const enterPressed = useKeyPress('Enter')
 
   useEffect(() => {
+    if(enterPressed && !gameRun){
+      setGameRun(true)
+      reset()
+    }
     if(
         (
-          playerPosX + 60 > obstaclePosX &&
+          playerPosX + playerWidth > obstaclePosX &&
           playerPosX < obstaclePosX + obtacleWidth &&
-          playerPosY - 50 < obstacleHeight
+          playerPosY - playerHeight < obstacleHeight
         ) ||
         (
-          playerPosX + 60 > obstaclePosX + offset &&
+          playerPosX + playerWidth > obstaclePosX + offset &&
           playerPosX < obstaclePosX + obtacleWidth + offset &&
-          playerPosY - 50 < obstacleHeight
+          playerPosY - playerHeight < obstacleHeight
         )
       ){
         setGameRun(false)
+      }
+  },[obstaclePosX, enterPressed, playerPosY, offset, gameRun])
+
+  useEffect(() => {
+    let scoreIntervalId
+    if (gameRun){
+      scoreIntervalId = setInterval(() => {
+        setScore(score => (score + 15))
+      }, 1000);
     }
-    if(enterPressed){
-      setGameRun(true)
-    }
-  },[obstaclePosX, obstaclePosY, enterPressed, obtacleWidth, obstacleHeight, playerPosY, offset])
+      return () => clearInterval(scoreIntervalId)
+    
+  },[gameRun])
 
   return (
     <div className='gamewindow'>
@@ -52,9 +71,10 @@ function ElephantGame() {
       {gameRun ?
         <>
           <Elephant
+            playerWidth={playerWidth}
+            playerHeight={playerHeight}
             gameRun={gameRun}
             setGameRun={setGameRun}
-            GRAVITY={GRAVITY}
             groundLevel={groundLevel}
             playerPosX={playerPosX}
             playerPosY={playerPosY}
@@ -70,9 +90,17 @@ function ElephantGame() {
             offset={offset}
             setOffset={setOffset}
           />
+          <p style={{position:'absolute', right:10}}>Score: {score}</p>
         </>
-       : null }
-      <p style={{position:'absolute'}}>Player altitude: {playerPosY}, {obstaclePosX }</p>
+       : 
+        <div className='score'>
+          <div className='score-inner'>
+            <p>Your score is: {score}</p>
+            <p>Pres ↵ Enter to restart</p>
+            <p>Use ↑ to jump</p>
+          </div>
+        </div>
+       }
     </div>
   )
 }

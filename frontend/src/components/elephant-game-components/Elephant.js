@@ -4,12 +4,11 @@ import elFrame1 from './logoTS-192-frame1.png'
 import elFrame2 from './logoTS-192-frame2.png'
 
 
-function Elephant({gameRun, setGameRun, playerPosX, playerPosY, setPlayerPosY, groundLevel, GRAVITY}) {
+function Elephant({playerPosX, playerPosY, setPlayerPosY, groundLevel, playerWidth, playerHeight}) {
 
-  const playerWidth = 60
-  const playerHeight = 50
-  const jumpHight = 180
+  const jumpHight = 200
   const jumpSpeed = 40
+  const GRAVITY = 10
 
   const [ falling, setFalling ] = useState(true)
   const [ step, setStep ] = useState(false)
@@ -48,7 +47,7 @@ function Elephant({gameRun, setGameRun, playerPosX, playerPosY, setPlayerPosY, g
       clearInterval(gameTimerId)
       clearInterval(frameTimerId)
     }
-  }, [GRAVITY, groundLevel, falling, upPressed, playerPosY, setPlayerPosY])
+  }, [ groundLevel, falling, upPressed, playerPosY, setPlayerPosY])
 
   return (
     <div className='collisionBox' style={{
@@ -57,6 +56,7 @@ function Elephant({gameRun, setGameRun, playerPosX, playerPosY, setPlayerPosY, g
         height: playerHeight,
         left: playerPosX,
         bottom: playerPosY,
+        zIndex:5
     }}>
       <img className='palyerAsset' src={step ? elFrame2 : elFrame1 } alt='elephant?'/>
     </div>
