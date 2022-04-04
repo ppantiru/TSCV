@@ -63,7 +63,7 @@ function ElephantGame() {
         setScore(score => (score + 15))
       }, 1000);
     }
-      return () => clearInterval(scoreIntervalId)
+    return () => clearInterval(scoreIntervalId)
     
   },[gameRun])
 
