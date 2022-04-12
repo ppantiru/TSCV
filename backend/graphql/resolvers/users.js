@@ -25,6 +25,14 @@ module.exports = {
             } catch (err) {
                 throw new Error(err)
             }
+        },
+        async getUser(_, { username }){
+            try{
+                const user = await User.findOne({username})
+                return user
+            } catch (err) {
+                throw new Error(err)
+            }
         }
     },
     Mutation:{

@@ -24,5 +24,6 @@ module.exports =  gql`
     #Queries
     type Query {
         getUsers: [User]
+        getUser(username: String!): User!
     }
 `
