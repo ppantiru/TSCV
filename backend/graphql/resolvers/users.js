@@ -29,6 +29,11 @@ module.exports = {
         async getUser(_, { username }){
             try{
                 const user = await User.findOne({username})
+
+                if(!user){
+                    throw new UserInputError('User not found')
+                }
+
                 return user
             } catch (err) {
                 throw new Error(err)
@@ -36,6 +41,46 @@ module.exports = {
         }
     },
     Mutation:{
+        async register(_,
+            {
+                registerInput : { username, email, password, confirmPassword }
+            }
+        ){
+            //  Validate user data
+            const { valid, errors } = validateRegisterInput(username, email, password, confirmPassword)
+            if(!valid){
+                throw new UserInputError('Errors', { errors })
+            }
+            //  Make sure user doesn't already exist
+            const user =  await User.findOne({ username })
+            if(user){
+                throw new UserInputError('Username is taken', {
+                    errors: {
+                        username: 'This username is taken'
+                    }
+                })
+            }
+
+            // hash password and creat an auth token
+            password = await bcrypt.hash(password, 12)
+
+            const newUser = new User({
+                email,
+                username,
+                password,
+                createdAt: new Date().toISOString()
+            })
+
+            const res = await newUser.save()
+            
+            const token = generateToken(res)
+
+            return {
+                ...res._doc,
+                id: res._id,
+                token
+            }
+        },
         async login(_, { username, password }){
             const { errors, valid } = validateLoginInput(username, password)
             const user = await User.findOne({username})
@@ -63,45 +108,52 @@ module.exports = {
                 token
             }
         },
-        async register(_,
+
+        async changePassword(_, 
             {
-                registerInput : { username, email, password, confirmPassword }
-            }
-        ){
-            //  Validate user data
-                const { valid, errors } = validateRegisterInput(username, email, password, confirmPassword)
-                if(!valid){
-                    throw new UserInputError('Errors', { errors })
-                }
-            //  Make sure user doen't already exist
-                const user =  await User.findOne({ username })
-                if(user){
-                    throw new UserInputError('Username is taken', {
-                        errors: {
-                            username: 'This username is taken'
-                        }
-                    })
-                }
-
-            // hash password and creat an auth token
-            password = await bcrypt.hash(password, 12)
-
-            const newUser = new User({
-                email,
-                username,
-                password,
-                createdAt: new Date().toISOString()
+                changePasswordInput : { username, newpassword }
             })
+            {
+            const { errors, valid } = validateLoginInput(username, newpassword)
+            const user = await User.findOne({ username })
 
-            const res = await newUser.save()
+            if(!user){
+                errors.genral = 'User not found'
+                throw new UserInputError('User not found', { errors })
+            }
+ 
+            if(!valid){
+                throw new UserInputError('Errors', { errors })
+            }
             
-            const token = generateToken(res)
+            const password = await bcrypt.hash(newpassword, 12)
+
+            const updatedUser = await User.updateOne({ username },{
+                password: password
+            });
 
             return {
-                ...res._doc,
-                id: res._id,
-                token
+                id: updatedUser._id,
+                username
+            }
+        },
+
+        async deleteUser(_, { username }){
+            const user = await User.findOne({ username })
+
+            if(!user){
+                errors.genral = 'User not found'
+                throw new UserInputError('User not found', { errors })
+            }
+
+            await User.deleteOne({ username })
+
+            return {
+                ...user.doc,
+                id: user._id,
+                username
             }
         }
+
     }
 }

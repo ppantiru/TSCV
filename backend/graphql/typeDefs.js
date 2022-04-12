@@ -14,11 +14,16 @@ module.exports =  gql`
         confirmPassword: String!
         email: String!
     }
-
+    input changePasswordInput{
+        username: String!
+        newpassword: String!
+    }
     #Mutations
     type Mutation{
         register(registerInput: registerInput): User!
+        changePassword(changePasswordInput: changePasswordInput): User!
         login(username: String!, password: String!): User!
+        deleteUser(username: String!): User!
     }
 
     #Queries
