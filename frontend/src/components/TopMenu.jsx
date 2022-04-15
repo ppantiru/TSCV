@@ -1,6 +1,6 @@
-import logo from '../logoTS-192.png';
-import roFlag from '../ro.svg';
-import gbFlag from '../gb.svg';
+import logo from '../assets/logoTS-192.png';
+import roFlag from '../assets/ro.svg';
+import gbFlag from '../assets/gb.svg';
 import { Navbar } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom'

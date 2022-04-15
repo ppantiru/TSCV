@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import useKeyPress from './KeysHandler'
-import elFrame1 from './logoTS-192-frame1.png'
-import elFrame2 from './logoTS-192-frame2.png'
+import useKeyPress from '../../helper/KeysHandler'
+import elFrame1 from '../../assets/elephant-game/logoTS-192-frame1.png'
+import elFrame2 from '../../assets/elephant-game/logoTS-192-frame2.png'
 
 
 function Elephant({playerPosX, playerPosY, setPlayerPosY, groundLevel, playerWidth, playerHeight}) {

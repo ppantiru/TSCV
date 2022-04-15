@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import rock1 from './rock1.png'
-import rock2 from './rock2.png'
+import rock1 from '../../assets/elephant-game/rock1.png'
+import rock2 from '../../assets/elephant-game/rock2.png'
 
 
 function Obstacles({obtacleWidth, obstacleHeight, obstaclePosX, setObstaclePosX, obstaclePosY, getRandomInt, offset, setOffset}) {

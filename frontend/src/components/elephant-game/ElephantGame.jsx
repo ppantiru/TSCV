@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import Elephant from './Elephant'
+import Elephant from './Elephant.jsx'
 import Obstacles from './Obstacles'
 import Landscape from './Landscape'
-import useKeyPress from './KeysHandler'
+import useKeyPress from '../../helper/KeysHandler'
 import { useTranslation } from "react-i18next"
 
 function getRandomInt(min, max) {
