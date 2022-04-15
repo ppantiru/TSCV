@@ -1,3 +1,10 @@
+/*
+    This is for demo purposes only and is not actually secure,
+    I got bored half way through because the app doesn't actually need a login system
+    TODO maybe: validate user token when changing password or deleting users
+    not a TODO: a rights system of some kind
+    possible TODO: modularize this a more?
+*/
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const { UserInputError } = require('apollo-server')
