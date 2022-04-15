@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './helper/i18next';
+import './utils/i18next';
 import './stylesheets/index.css';
 
 ReactDOM.render(

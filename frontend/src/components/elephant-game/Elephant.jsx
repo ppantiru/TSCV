@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import useKeyPress from '../../helper/KeysHandler'
+import useKeyPress from '../../utils/KeysHandler'
 import elFrame1 from '../../assets/elephant-game/logoTS-192-frame1.png'
 import elFrame2 from '../../assets/elephant-game/logoTS-192-frame2.png'
 
