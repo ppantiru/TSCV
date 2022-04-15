@@ -16,9 +16,8 @@ function Sidebar(props) {
 		else
 			navigate(`${path}`)
 
-		if(width < breakpoint){
+		if(width < breakpoint)
 			scrollToContent()
-		}
 	}
 
 	

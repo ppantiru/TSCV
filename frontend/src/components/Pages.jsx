@@ -8,6 +8,8 @@ import NonSkills from '../pages/NonSkills'
 import Portfolio from '../pages/Portfolio'
 import Evaluations from '../pages/Evaluations'
 import Fun from '../pages/Fun'
+import LoginForm from '../auth/LoginForm'
+import RegisterForm from '../auth/RegisterForm'
 
 
 function Pages(){
@@ -24,6 +26,8 @@ function Pages(){
                         <Route path='/portfolio' element={<Portfolio />} />
                         <Route path='/evaluations' element={<Evaluations />} />
                         <Route path='/fun' element={<Fun />} />
+                        <Route path='/login' element={<LoginForm/>} />
+                        <Route path='/register' element={<RegisterForm/>} />
                     </Routes>
                     <BackToTop />
                 </div>
