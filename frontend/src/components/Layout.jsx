@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
+import {Container, Tab, Row} from 'react-bootstrap'
 import Sidebar from './Sidebar'
 import Pages from './Pages'
-import {Container, Tab, Row} from 'react-bootstrap'
+
 
 function Layout() {
     const width = window.innerWidth;

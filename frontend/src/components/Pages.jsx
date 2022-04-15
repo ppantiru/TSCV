@@ -1,10 +1,10 @@
+import { Col } from 'react-bootstrap'
+import { Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
 import AboutMe from '../pages/AboutMe'
-import { Col } from 'react-bootstrap'
-import ScrollButton from './ScrollButton'
-import { Route, Routes } from 'react-router-dom'
-import NonSkills from '../pages/NonSkills'
+import BackToTop from './BackToTop'
 import Skills from '../pages/Skills'
+import NonSkills from '../pages/NonSkills'
 import Portfolio from '../pages/Portfolio'
 import Evaluations from '../pages/Evaluations'
 import Fun from '../pages/Fun'
@@ -25,7 +25,7 @@ function Pages(){
                         <Route path='/evaluations' element={<Evaluations />} />
                         <Route path='/fun' element={<Fun />} />
                     </Routes>
-                    <ScrollButton />
+                    <BackToTop />
                 </div>
             </Col>
     );
