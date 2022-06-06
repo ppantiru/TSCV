@@ -15,9 +15,9 @@ function RegisterForm(){
                 <input type="password" placeholder='password'/>
                 <input type="password" placeholder='confirm password'/>
                 <button className='cybr-btn cybr-btn-smaller'>  
-                <span aria-hidden className='loginText'>Create Account_</span>
-                <span aria-hidden className="cybr-btn__glitch">root_</span>
-                <span aria-hidden className="cybr-btn__tag">R25</span>
+                    <span aria-hidden className='loginText'>Create Account_</span>
+                    <span aria-hidden className="cybr-btn__glitch">root_</span>
+                    <span aria-hidden className="cybr-btn__tag">R25</span>
                 </button>
             </form>
         </div>   
