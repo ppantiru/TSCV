@@ -3,47 +3,11 @@ import axios from "axios";
 import "../stylesheets/StillLearning.css";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-//To add setter
-// async function getData() {
-// 	try {
-// 		const resp = await fetch("https://en.wikipedia.org/api/rest_v1/page/random/summary");
-// 		const data = await resp.json();
-// 		return data;
-// 	} catch (err) {
-// 		console.log("Shit went sideways with the fetch: ", err);
-// 	}
-// }
-
-// async function constructWikiExcerpt() {
-// 	const wikipage = await getData(
-// 		"https://en.wikipedia.org/api/rest_v1/page/random/summary"
-// 	);
-// 	const article = (
-// 		<div className="wikiCard">
-// 			<h2>{wikipage?.title}</h2>
-// 			<img src={wikipage?.thumbnail?.source} alt="thumbnail not available" />
-// 			<p>
-// 				<em>{wikipage?.description}</em>
-// 			</p>
-// 			<div dangerouslySetInnerHTML={{ __html: wikipage?.extract_html }}></div>
-// 			<div className="articleLink">
-// 				<a type="button" href={wikipage?.content_urls?.desktop?.page}>
-// 				<button className="btn btn-primary" type="button">
-// 					Read full article
-// 				</button>
-// 				</a>
-// 			</div>
-// 		</div>
-// 	);
-
-// 	return article;
-// }
-
 function NonSkills() {
 	const [randomTitle, setRandomTitle] = useState('Big_Bang')
 	const [respData, setRespData] = useState([]);
 
-	const fetchData = () => {
+	const getRandomTitle = () => {
 		axios
 			.get("https://en.wikipedia.org/api/rest_v1/page/random/title")
 			.then(resp => {
@@ -59,14 +23,11 @@ function NonSkills() {
 				setRespData([...respData, ...resp.data.pages]);
 			})
 			.catch((error) => console.log)
-			fetchData()
+			getRandomTitle()
 	}
 	useEffect(() => {
 		fetchMoreData()
-		// setTimeout(() => {
-		// 	console.log(respData)
-		//   }, 1000);
-}, []);
+	}, []);
 
 	return (
 		<>
