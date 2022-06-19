@@ -1,12 +1,11 @@
 import { Col } from 'react-bootstrap'
 import { Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
-import AboutMe from '../pages/AboutMe'
 import BackToTop from './BackToTop'
 import Skills from '../pages/Skills'
-import NonSkills from '../pages/NonSkills'
+import StillLearning from '../pages/StillLearning'
 import Portfolio from '../pages/Portfolio'
-import Evaluations from '../pages/Evaluations'
+import ProblemSolving from '../pages/ProblemSolving'
 import Fun from '../pages/Fun'
 import LoginForm from '../auth/LoginForm'
 import RegisterForm from '../auth/RegisterForm'
@@ -20,11 +19,10 @@ function Pages(){
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/home' element={<Home />} />
-                        <Route path='/about-me' element={<AboutMe />} />
-                        <Route path='/skills' element={<Skills />} />
-                        <Route path='/non-skills' element={<NonSkills />} />
                         <Route path='/portfolio' element={<Portfolio />} />
-                        <Route path='/evaluations' element={<Evaluations />} />
+                        <Route path='/skills' element={<Skills />} />
+                        <Route path='/problem-solving' element={<ProblemSolving />} />
+                        <Route path='/still-learning' element={<StillLearning />} />
                         <Route path='/fun' element={<Fun />} />
                         <Route path='/login' element={<LoginForm/>} />
                         <Route path='/register' element={<RegisterForm/>} />

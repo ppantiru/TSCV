@@ -2,13 +2,14 @@
     "login": "Login",
     "register": "Register",
     "home": "Home",
-    "about-me": "About me",
-    "skills": "I know / CV",
+    "skills": "What I can offer / CV",
     "portfolio": "Portfolio",
-    "non-skills": "I don't know",
-    "evaluations": "Evaluations",
-    "fun": "For fun",
+    "still-learning": "Still learning",
+    "problem-solving": "Problem Solving",
+    "fun": "Fun",
     "score": "Your score is",
     "press-enter": "Pres ↵ to start",
-    "press-up": "Use ↑ to jump"
+    "press-up": "Use ↑ to jump",
+    "fun-sumary": "Just a silly 'lil game I made for fun when I was learning react.",
+    "why-not": "Cuz why not?"
 }

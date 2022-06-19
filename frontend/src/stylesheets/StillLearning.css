@@ -1,0 +1,14 @@
+.wikiCard{
+	margin-top: 10px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 5px 5px #888;
+}
+
+.wikiCard img{
+	max-with: 300px;	
+}
+
+.articleLink{
+	text-align: center;
+}

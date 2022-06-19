@@ -6,7 +6,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 function Sidebar(props) {
 	const {width, breakpoint, scrollToContent} = props;
     const { t } = useTranslation()
-    const buttons = ['home', 'about-me', 'skills', 'non-skills', 'portfolio', 'evaluations','fun']
+    const buttons = ['home', 'portfolio', 'skills', 'problem-solving', 'still-learning', 'fun']
 	const navigate = useNavigate()
 	const location = useLocation()
 

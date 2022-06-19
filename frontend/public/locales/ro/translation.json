@@ -2,13 +2,14 @@
     "login": "Autentificare",
     "register": "Înregistrare",
     "home": "Acasă",
-    "about-me": "Despre mine",
-    "skills": "Ce știu / CV",
+    "skills": "Cu ce pot contribui / CV",
     "portfolio": "Portofoliu",
-    "non-skills": "Ce nu știu",
-    "evaluations": "Evaluări",
-    "fun": "Joculeț",
+    "still-learning": "Înca învăț despre",
+    "problem-solving": "Cum rezolvăm probleme",
+    "fun": "Fun",
     "score": "Scorul tău este",
     "press-enter": "Apasă ↵ pentru a începe",
-    "press-up": "Folosește ↑ pentru a sări"
+    "press-up": "Folosește ↑ pentru a sări",
+    "fun-sumary": "Doar un joculeț banal pe care l-am facut invățând react.",
+    "why-not": "Pentru că \"de ce nu?\""
 }
