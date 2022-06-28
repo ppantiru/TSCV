@@ -5,6 +5,7 @@ function Portfolio() {
     <>
     <h1>Portfolio</h1>
     <div>Example of tech stuff</div>
+    <div className="letter"></div>
     </>
   )
 }

@@ -11,5 +11,8 @@
     "press-enter": "Pres ↵ to start",
     "press-up": "Use ↑ to jump",
     "fun-sumary": "Just a silly 'lil game I made for fun when I was learning react.",
-    "why-not": "Cuz why not?"
+    "why-not": "Cuz why not?",
+	"to-learn": "Things I still have to learn about",
+	"content-disclaimer": "If the there are weird stuff displayed please note that the content on this page is generated randomly with the wikikipedia API.",
+	"too-lazy": ""
 }

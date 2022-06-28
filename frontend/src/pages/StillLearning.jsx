@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../stylesheets/StillLearning.css";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useTranslation } from "react-i18next"
 
 function NonSkills() {
+	const { t } = useTranslation()
 	const [randomTitle, setRandomTitle] = useState('Big_Bang')
 	const [respData, setRespData] = useState([]);
 
@@ -31,11 +33,10 @@ function NonSkills() {
 
 	return (
 		<>
-		<h1>Things I still have to learn about</h1>
+		<h1>{t('to-learn')}</h1>
 		<p>
 			<em>
-			If the there are weird stuff displayed please note that the content on
-			this page is generated randomly with the wikikipedia API.
+				{t('content-disclaimer')}
 			</em>
 		</p>
 		<div className="wikiContent">
@@ -49,8 +50,8 @@ function NonSkills() {
 				<div key={index} className="wikiCard">
 				<h2 dangerouslySetInnerHTML={{ __html: data?.displaytitle }}></h2>
 				<img src={data?.thumbnail?.source} alt="" />
-				<p>
-					<em>{data?.description}</em>
+				<p className="description">
+					<em>Description: {data?.description}</em>
 				</p>
 				<div dangerouslySetInnerHTML={{ __html: data?.extract_html }}></div>
 				<div className="articleLink">
