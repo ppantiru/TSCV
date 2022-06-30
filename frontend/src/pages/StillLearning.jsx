@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next"
 
 function NonSkills() {
 	const { t } = useTranslation()
-	const [randomTitle, setRandomTitle] = useState('Big_Bang')
+	const [randomTitle, setRandomTitle] = useState('Quantum_field_theory')
 	const [respData, setRespData] = useState([]);
 
 	const getRandomTitle = () => {
