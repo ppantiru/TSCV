@@ -23,23 +23,23 @@ function Sidebar(props) {
 	
   return (
 		<Col xs='12' lg='2' className={width < breakpoint ? 'd-lg-none mobile-outer' : "d-none d-lg-block sidebar"} >
-		<Col className={width < breakpoint ? 'mobile-inner' : 'sidebar-inner scrollable'} xs='12' sm='12' lg='2'>
-			{buttons.map((translationKey) =>
-				<button key={translationKey} 
-				className={
-					`${translationKey} cybr-btn ${`/${translationKey}` === location.pathname ? 'active' : ''}
-					${translationKey === 'home' && location.pathname === '/' ? 'active' : '' }
-					`
-				}
-				onClick={
-					()=>onClick(`${translationKey}`)
-				} >
-					{t(translationKey)}<span aria-hidden>_</span>
-					<span aria-hidden className="cybr-btn__glitch">root_</span>
-					<span aria-hidden className="cybr-btn__tag">R25</span>
-				</button>
-			)}
-		</Col>
+			<Col className={width < breakpoint ? 'mobile-inner' : 'sidebar-inner scrollable'} xs='12' sm='12' lg='2'>
+				{buttons.map((translationKey) =>
+					<button key={translationKey} 
+					className={
+						`${translationKey} cybr-btn ${`/${translationKey}` === location.pathname ? 'active' : ''}
+						${translationKey === 'home' && location.pathname === '/' ? 'active' : '' }
+						`
+					}
+					onClick={
+						()=>onClick(`${translationKey}`)
+					} >
+						{t(translationKey)}<span aria-hidden>_</span>
+						<span aria-hidden className="cybr-btn__glitch">root_</span>
+						<span aria-hidden className="cybr-btn__tag">R25</span>
+					</button>
+				)}
+			</Col>
 		</Col>
   )
 }

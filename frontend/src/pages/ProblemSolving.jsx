@@ -34,7 +34,7 @@ function ProblemSolving() {
 			<span className="c10" />
 		</p>
 		<p className="c2">
-			<span className="c7">General algorithm of problems solving:</span>
+			<span className="c7">General algorithm of problem solving:</span>
 			<br />
 			<span className="c10">
 			<br />
@@ -123,7 +123,7 @@ function ProblemSolving() {
 			<span className="c10" />
 		</p>
 		<p className="c2">
-			<span className="c11">II) What are the general inputs of a state?</span>
+			<span className="c11">II) What are the general inputs for a state?</span>
 		</p>
 		<p className="c2 c6">
 			<span className="c11" />
@@ -145,7 +145,7 @@ function ProblemSolving() {
 				Actions - an application of a set of ideas
 				<br />* They can be in motion/underway with the target of changing
 				something
-				<br />* They can in continuous motion with the purpose of maintaining a
+				<br />* They can be in continuous motion with the purpose of maintaining a
 				balance
 				<br />* The are not implemented
 				<br />
@@ -213,7 +213,7 @@ function ProblemSolving() {
 		</p>
 		<p className="c2">
 			<span className="c7">
-			If the ideas of the one desiring something conflict with the
+			If the ideas of the one desiring something conflicts with the
 			contentment/satisfaction of the neighbouring (at a global scale)
 			individuals, it will hinder the result. However, if the neighbouring
 			individuals (which also constitute other entities, like companies or
@@ -510,7 +510,7 @@ function ProblemSolving() {
 			</span>
 			<span className="c0">
 			<br />
-			It simply means that certain problems require more time than others to be
+			It simply means that certain problems require more time(the third parameter we pass to our function) than others to be
 			implemented to their full extent in order to obtain the exact desired
 			result, in conclusion, the algorithm still stands and offers the best
 			possible solution at a given time.
