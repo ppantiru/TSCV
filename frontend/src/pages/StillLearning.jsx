@@ -5,7 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useTranslation } from "react-i18next"
 
 function NonSkills() {
-	const { t } = useTranslation()
+	const { t } = useTranslation(['translationGeneral'])
 	const [randomTitle, setRandomTitle] = useState('Quantum_field_theory')
 	const [respData, setRespData] = useState([]);
 

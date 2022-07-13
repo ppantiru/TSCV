@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom'
 
 function TopMenu(){
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation(['translationGeneral']);
 
     function handleClick(lang) {
         i18n.changeLanguage(lang);

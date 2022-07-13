@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next"
 
 function Fun() {
 
-  const { t } = useTranslation()
+  const { t } = useTranslation(['translationGeneral'])
 
   return (
     <>

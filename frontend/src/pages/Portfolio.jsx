@@ -1,34 +1,37 @@
 import React from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { useTranslation } from "react-i18next"
 
 function Portfolio() {
+  const { t } = useTranslation(['translationGeneral'])
+
   return (
     <>
-      <h1>Portfolio</h1>
+      <div className='info'>{t('no-translation')}</div>      <h1>Portfolio</h1>
       <p>This page contains a few projects and snippets I've done that may be of some relevance regarding technologies I've interacted with.</p>
-      <p>Due to the fact that my primary work inolves development and problems solving for different clients, much of my main work is not publically available,
-        therefor what is presented here is either kind of old by this point or things that I've done in my free time. 
+      <p>Due to the fact that my primary work involves development and problems solving for different clients, much of my main work is not publically available,
+        therefor, what is presented here is either kind of old by this point or things that I've done in my free time. 
       </p>
-      <h2>This website</h2>
+      <h3>This website</h3>
       <p>Built using some of the technologies mentioned on the Thin Slices website, like React, nodejs, graphql and mongodb specifically for this purpose.</p>
-      <p>The backend was not really needed for this but I build one just for demo purposes.</p>
-      <a className='btn btn-primary' href='https://github.com/ppantiru/TSCV' target="_blank">Source code</a>
+      <p>The backend was not really needed for this, but I build one just for demo purposes.</p>
+      <a className='btn btn-primary' href='https://github.com/ppantiru/TSCV' target="_blank" rel="noreferrer">Source code</a>
       <br/><br/>
-      <h2>The xwiki.com website</h2>
+      <h3>The xwiki.com website</h3>
       <p>This has nothing to do with node and react, but it's more of an example of a publically available website I've worked as an architect/lead developer on, with the restriction of using the xwiki platform as a basis.
-        But keep in mind this was about 5 years ago and there are a lot of things I would do differently now.</p>
+        But keep in mind this was about 5 years ago, and there are a lot of things I would do differently now.</p>
       <img className='demo' alt='xwiki.com' src='xcom.png'></img><br/><br/>
-      <a className='btn btn-primary' href='https://xwiki.com' target="_blank">Visit website</a>
+      <a className='btn btn-primary' href='https://xwiki.com' target="_blank" rel="noreferrer">Visit website</a>
       <br/><br/>
-      <h2>Launchpad</h2>
+      <h3>Launchpad</h3>
       <p>This one's a project I did for myself, after seeing and wanting an <a href='https://www.elgato.com/en/stream-deck'>Elgato stream deck</a>. I was about to buy it but 
-      realized it doesn't have official linux support, and also that I can build one myslef for little to no cost.</p>
-      <p>I already had the hardware; an old tablet that I wasn't using anymore, all I needed was the software which turns out was not very complicated to build so I had it 
+      realized it doesn't have official linux support, and also that I can build one myself for little to no cost.</p>
+      <p>I already had the hardware; an old tablet that I wasn't using anymore, all I needed was the software which turns out was not very complicated to build, so I had it 
         working within a weekend.</p>
-      <p>A server running on my laptop which controlled various scripts and processes, a react client interface accessible from the tablet and voila relatively free Stream deck
+      <p>A server running on my laptop which controlled various scripts and processes, a react client interface accessible from the tablet and voilà relatively free Stream deck
         that's not even restricted to a limited number of buttons because I have an entire touchscreen to put anything I want on it.
-        The beauty is that to add new buttons and functionality I only need to modify a rather simple <a href='https://github.com/ppantiru/Launchpad/blob/main/command-center-api/Makefile'>Makefile</a>.
+        The beauty is that to add new buttons and functionality, I only need to modify a rather simple <a href='https://github.com/ppantiru/Launchpad/blob/main/command-center-api/Makefile'>Makefile</a>.
       </p>
       <p>
         The main thing I actually use it for is one tap access to remote servers, but for legal and security reasons I cannot easily showcase that.
@@ -39,15 +42,15 @@ function Portfolio() {
       Your browser does not support the video tag.
       </video> 
       <br/>
-      <a className='btn btn-primary' href='https://github.com/ppantiru/Launchpad' target="_blank">Source code</a>
+      <a className='btn btn-primary' href='https://github.com/ppantiru/Launchpad' target="_blank" rel="noreferrer">Source code</a>
       <br/><br/>
-      <h2>Bash application for backporting automation</h2>
-      <p>This one's a bash application built to simplify the proccess of creating patches and backports between xwiki versions.</p>
+      <h3>Bash application for backporting automation</h3>
+      <p>This one's a bash application built to simplify the process of creating patches and backports between xwiki versions.</p>
       <p>From cherry-picking the needed commits to building them with maven running from a docker container (to avoid the need to actually setup maven beforehand)
-        and committing the changes all done semi-automatically (semi because you still need to feed it some information).</p>
-      <a className='btn btn-primary' href='https://github.com/ppantiru/patchAutomation/tree/main/xwiki-support-tools' target="_blank">Source code</a>
+        and committing the changes, all done semi-automatically (semi because you still need to feed it some information).</p>
+      <a className='btn btn-primary' href='https://github.com/ppantiru/patchAutomation/tree/main/xwiki-support-tools' target="_blank" rel="noreferrer">Source code</a>
       <br/><br/>
-      <h2>Python snippet</h2>
+      <h3>Python snippet</h3>
       <p>For a python projects I cannot provide a clear link to an example as they are mainly on private repositories for a reason,
       but what I can share is a snippet from a backup system I've developed a few years back.</p>
       <div className='scrollableSmall'>
@@ -66,7 +69,7 @@ function Portfolio() {
 
     ##Returns the 2nd key for sorting the list of files
     def vol_suffix(x):
-    res = re.search('\.vol(\d+)\.', x) 
+    res = re.search('\\.vol(\\d+)\\.', x) 
     return int(res.group(1)) if hasattr(res, 'group') else 0
 
     ##Return a sorted list based on date and vol

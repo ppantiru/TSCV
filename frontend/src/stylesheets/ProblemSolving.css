@@ -6,3 +6,8 @@
     position: relative;
     width: 95%;
 }
+.getDoc{
+    display: block;
+    position: relative;
+    text-align: right;
+  }

@@ -1,7 +1,7 @@
 {
     "login": "Autentificare",
     "register": "Înregistrare",
-    "home": "Acasă",
+    "home": "Pagina principală",
     "skills": "Cu ce pot contribui / CV",
     "portfolio": "Portofoliu",
     "still-learning": "Înca învăț despre",
@@ -14,5 +14,5 @@
     "why-not": "Pentru că \"de ce nu?\"",
 	"to-learn": "Topicuri despre care mai am de învățat",
 	"content-disclaimer": "Dacă sunt afișate lucruri dubioase, trebuie luat în considerare că acest conținut a fost generat pseudo-aleator folosind API-ul Wikipedia.",
-	"too-lazy": "Sorry! Mi-a fost prea lene să rescriu întreg articolul din nou în română 😪"
+	"no-translation": "Scuze! Traducerea integrala a conținutului m-ar fi amânat prea mult 😟. Scopul selectării limbii fiind doar demonstrativ."
 }
