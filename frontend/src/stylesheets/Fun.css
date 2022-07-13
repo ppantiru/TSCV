@@ -112,12 +112,14 @@ top: -10px;
   position: absolute;
   background: rgb(51, 51, 51) none repeat scroll 0% 0%;
   opacity: 0.5;
-  color: rgb(255, 255, 255);
   font-weight: 700;
   text-align: center;
   height: 100%;
   width: 100%;
   z-index: 4;
+}
+.score p{
+  color: rgb(255, 255, 255);
 }
 .score-inner{
   position: relative;

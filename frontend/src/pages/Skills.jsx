@@ -9,9 +9,9 @@ function Skills() {
     <div className='info'>{t('no-translation')}</div>
     <h1>Alright, so what exactly do I consider to be good at?</h1>
     <p>So let's start with a mandatory disclaimer. I'm not gonna list here every thing I've done since I was a baby (that's in the CV sort of),
-      but rather what my current interests are when it comes to technologies and what skills I consider useful in a company like Thin Slices.</p>
+      but rather what my current interests are when it comes to technologies and what skills I consider useful in a company like Thin Slices.
       So let's start with the basics:
-
+    </p>
     <h2>Communication</h2>
     <p>An important soft skill that takes more than meets the eye.</p>
     <p>Besides the languages, of which I am <em>fluent in Romanian and English</em> with a bit of French understanding sprinkled in,
@@ -54,8 +54,8 @@ function Skills() {
         <li>unreal engine 5</li>
         <li>apache velocity</li>
         <li>groovy</li>
+        <li>Preferred OS: Linux, but I can work with whatever.</li>
       </ul>
-      Preferred OS: Linux, but I can work with whatever.
       
 
       <p>I could continue, but there's already a scrollbar here, meaning there's too much text for the average attention span of a human,
